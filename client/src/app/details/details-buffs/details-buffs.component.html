@@ -1,0 +1,24 @@
+<div *ngIf="entity.stateBoostBuffs.length > 0" class="buffs">
+  <h1>États</h1>
+  <div>
+    <app-state-boost-buff *ngFor="let buff of entity.stateBoostBuffs" [buff]="buff"></app-state-boost-buff>
+  </div>
+</div>
+<div *ngIf="entity.boostBuffs.length > 0" class="buffs">
+  <h1>Boosts</h1>
+  <div>
+    <app-boost-buff *ngFor="let buff of entity.boostBuffs" [buff]="buff"></app-boost-buff>
+  </div>
+</div>
+<div *ngIf="entity.triggeredBuffs.length > 0" class="buffs">
+  <h1>Effets déclenchés</h1>
+  <div>
+    <app-triggered-buff *ngFor="let buff of entity.triggeredBuffs" [buff]="buff"></app-triggered-buff>
+  </div>
+</div>
+<div *ngIf="entity.spellBoostBuffs.length > 0" class="buffs">
+  <h1>Boosts sorts</h1>
+  <div>
+    <app-spell-boost-buff *ngFor="let buff of entity.spellBoostBuffs" [buff]="buff"></app-spell-boost-buff>
+  </div>
+</div>

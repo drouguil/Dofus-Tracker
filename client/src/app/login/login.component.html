@@ -1,0 +1,55 @@
+<div id="window">
+
+  <h1 *ngIf="serverIsRunning && !isLoading">Bienvenue</h1>
+
+  <h1 *ngIf="!serverIsRunning && !isLoading">Erreur Serveur</h1>
+
+  <h1 *ngIf="isLoading">Initialisation en cours</h1>
+
+  <div class="divider"></div>
+
+  <div id="params">
+
+    <h2 *ngIf="serverIsRunning && !isLoading">Paramètres</h2>
+
+    <h2 *ngIf="!serverIsRunning && !isLoading">Relancez-les puis rechargez la page</h2>
+
+    <h2 *ngIf="isLoading">Récupération des informations...</h2>
+
+    <div *ngIf="serverIsRunning && !isLoading">
+
+      <mat-form-field>
+        <mat-select [formControl]="devices" required>
+          <mat-option *ngFor="let device of deviceList; let i = index" [attr.data-index]="i" [value]="i">
+            {{device.description}}
+            {{device.addresses[0].addr}}
+          </mat-option>
+        </mat-select>
+        <mat-placeholder class="placeholder">
+          <mat-icon mdPrefix>wifi</mat-icon> Interface réseau
+        </mat-placeholder>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select [disabled]="isAllServers.value" [formControl]="servers" multiple [required]="!isAllServers.value">
+          <mat-option *ngFor="let server of serverList" [value]="server">{{server.name}}</mat-option>
+        </mat-select>
+        <mat-placeholder class="placeholder">
+          <mat-icon mdPrefix>people</mat-icon> Serveur(s) de jeu
+        </mat-placeholder>
+      </mat-form-field>
+
+      <div class="checkbox">
+        <mat-checkbox [formControl]="isAllServers" (click)="selectAllServers()">Tous les serveurs</mat-checkbox>
+        <mat-checkbox [formControl]="isStreaming">Stream</mat-checkbox>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div *ngIf="serverIsRunning && !isLoading" [ngClass]="{'disabled': !isReady()}" (click)="connect()" id="btn-login">
+  <span>Commencer</span>
+</div>

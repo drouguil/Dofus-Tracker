@@ -1,0 +1,11 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+app-entity-dofus,
+app-entity-legendaries,
+app-entity-states,
+app-entity-profil,
+app-entity-stat {
+    @include margin(auto);
+}

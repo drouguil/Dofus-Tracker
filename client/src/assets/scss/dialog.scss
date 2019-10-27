@@ -1,0 +1,15 @@
+@import './colorsManager.scss';
+@import './utils.scss';
+.mat-dialog-container {
+    @include background(color, color(greyscale, 300));
+}
+
+.mat-dialog-actions {
+    button {
+        @include margin(auto);
+    }
+}
+
+.cdk-overlay-container .cdk-overlay-dark-backdrop {
+    background: transparent;
+}

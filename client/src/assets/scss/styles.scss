@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './reset.scss';
+@import './fonts.scss';
+@import './colorsManager.scss';
+@import './utils.scss';
+@import './theme.scss';
+@import './button.scss';
+@import './snackbar.scss';
+@import './dialog.scss';
+
+app-root {
+    @include flex(vertical);
+    @include margin(0);
+    @include dimensions(100%);
+}

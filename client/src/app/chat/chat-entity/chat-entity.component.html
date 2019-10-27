@@ -1,0 +1,5 @@
+<div class="entity" [ngClass]="{'red': entity.team === 0, 'blue': entity.team === 1}" (click)="openDetails()"
+  (mouseenter)="onHover()" (mouseleave)="onLeave()">
+  <img [src]="entityImage">
+  <span [ngClass]="entityLength">{{ entity.name }}</span>
+</div>

@@ -1,0 +1,27 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+app-cell-available {
+    @include dimensions(100%);
+}
+
+app-cell-empty,
+app-cell-obstacle {
+    @include flex(vertical);
+    @include dimensions(100%);
+    @include relative();
+}
+
+app-cell-empty {
+    @include margin(auto);
+    @include dimensions(70.71px, 70.71px);
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
+    z-index: 3;
+    top: -10px;
+    cursor: pointer;
+}
+
+app-cell-empty {
+    background-color: transparent;
+}

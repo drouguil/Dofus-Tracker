@@ -1,0 +1,4 @@
+<div class="stat">
+    <span [ngClass]="{'negative': statValue < 0}">{{ getStatValue() }}</span>
+    <img src="../../assets/img/stats/{{stat}}.png">
+</div>

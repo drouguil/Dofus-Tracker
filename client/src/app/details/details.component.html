@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{entity.name}}</h1>
+<div mat-dialog-content>
+  <app-details-entity [entity]="entity"></app-details-entity>
+  <app-details-spells [entity]="entity"></app-details-spells>
+  <app-details-buffs [entity]="entity"></app-details-buffs>
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="info" (click)="close()">Fermer</button>
+</div>

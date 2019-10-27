@@ -1,0 +1,41 @@
+$fonts: (
+    title: (
+        names: (
+            primary: Title,
+            secondary: sans-serif
+        ),
+        sizes: (
+            huge: 92px,
+            big: 70px,
+            medium:28px,
+            small: 20px,
+            tiny: 14px,
+        )
+    ),
+    text: (
+        names: (
+            primary: Roboto,
+            secondary: sans-serif
+        ),
+        sizes: (
+            huge: 18px,
+            big: 16px,
+            medium: 14px,
+            small: 12px,
+            tiny: 10px
+        )
+    )
+);
+
+@function font($font-type: null, $font-size: medium, $font-effect: normal) {
+    @if($font-type) {
+        @return unquote($font-effect + ' ' + map-get(map-get(map-get($fonts, $font-type), sizes), $font-size) + ' ' + map-get(map-get(map-get($fonts, $font-type), names), primary) + ',' + map-get(map-get(map-get($fonts, $font-type), names), secondary));
+    }
+    @else {
+        @error "Missing type's font";
+    }
+}
+
+@mixin font($font-type: null, $font-size: medium, $font-effect: normal) {
+    font: font($font-type, $font-size, $font-effect);
+}

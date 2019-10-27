@@ -1,0 +1,24 @@
+@import '../../../../../assets/scss/colorsManager.scss';
+@import '../../../../../assets/scss/fontsManager.scss';
+@import '../../../../../assets/scss/mediasManager.scss';
+@import '../../../../../assets/scss/utils.scss';
+.set-state {
+    @include flex(horizontal);
+    @include margin(auto);
+    img {
+        @include dimensions(auto, 24px);
+        @include margin(auto 2px);
+    }
+    span {
+        @include margin(auto 2px);
+        @for $i from 0 through 5 {
+            &.length-#{$i} {
+                font-size: 18px - (($i+1)*2);
+            }
+        }
+    }
+    app-state-img {
+        @include flex(horizontal);
+        @include margin(auto);
+    }
+}

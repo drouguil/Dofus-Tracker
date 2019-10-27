@@ -1,0 +1,25 @@
+@import '../../assets/scss/colorsManager.scss';
+@import '../../assets/scss/fontsManager.scss';
+@import '../../assets/scss/mediasManager.scss';
+@import '../../assets/scss/utils.scss';
+#chat-container {
+    @include flex(vertical);
+    @include dimensions(500px, 100%);
+    @include margin(20px auto 10px auto);
+    @include z-index(third);
+    @include background(color, color(greyscale, 50));
+    border-radius: 5px;
+    >#messages-container {
+        @include dimensions(480px, auto);
+        @include margin(auto auto 10px 10px);
+        app-chat-message {
+            @include flex(horizontal);
+        }
+    }
+}
+
+#pages-container {
+    @include flex(horizontal, wrap);
+    @include dimensions(100%, 60px);
+    @include z-index(third);
+}

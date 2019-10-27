@@ -1,0 +1,11 @@
+<!-- Empty -->
+
+<app-cell-empty *ngIf="checkType(0)" [cell]="cell"></app-cell-empty>
+
+<!-- Available -->
+
+<app-cell-available *ngIf="checkType(1)" [cell]="cell"></app-cell-available>
+
+<!-- Obstacle -->
+
+<app-cell-obstacle *ngIf="checkType(2)" [cell]="cell"></app-cell-obstacle>

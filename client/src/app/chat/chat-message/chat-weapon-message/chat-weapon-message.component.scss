@@ -1,0 +1,33 @@
+@import '../../../../assets/scss/colorsManager.scss';
+@import '../../../../assets/scss/fontsManager.scss';
+@import '../../../../assets/scss/mediasManager.scss';
+@import '../../../../assets/scss/utils.scss';
+.weapon {
+    @include flex(horizontal);
+    @include margin(auto);
+    @include link();
+    .ap-cost {
+        @include margin(auto 2px);
+        @include color(info, 900);
+    }
+    img {
+        @include dimensions(auto, 24px);
+        @include margin(auto auto auto 2px);
+        &.crit,
+        &.ap-cost {
+            @include dimensions(auto, 16px);
+        }
+    }
+    span {
+        @include margin(auto 2px);
+        @for $i from 0 through 5 {
+            &.length-#{$i} {
+                font-size: 18px - (($i+1)*2);
+            }
+        }
+    }
+    .no-target {
+        @include flex(horizontal);
+        @include margin(auto);
+    }
+}

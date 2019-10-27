@@ -1,0 +1,10 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+app-overlay-entity {
+    @include dimensions(100%, auto);
+    @include flex(horizontal);
+    @include margin(auto);
+    @include padding(2px 0);
+}

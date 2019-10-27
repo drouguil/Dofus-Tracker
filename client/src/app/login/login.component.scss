@@ -1,0 +1,129 @@
+@import '../../assets/scss/colorsManager.scss';
+@import '../../assets/scss/fontsManager.scss';
+@import '../../assets/scss/mediasManager.scss';
+@import '../../assets/scss/utils.scss';
+#btn-login {
+    @include flex(vertical);
+    @include dimensions(297px, 92px);
+    @include margin(auto);
+    @include link();
+    @include absolute(inherit, 81px, -23px);
+    @include background(button, 'btn_login.png', 2, center center no-repeat);
+    &.disabled {
+        @include background(button, 'btn_login_disabled.png', 2, center center no-repeat);
+    }
+    &::before {
+        @include dimensions(0);
+        content: url('../../assets/img/buttons/btn_login_hover.png') url('../../assets/img/buttons/btn_login_pressed.png');
+        visibility: hidden;
+    }
+    &:not(.disabled) {
+        &:hover {
+            @include background(button,
+            'btn_login_hover.png',
+            2,
+            center center no-repeat);
+        }
+        &:active,
+        &:target {
+            @include background(button,
+            'btn_login_pressed.png',
+            2,
+            center center no-repeat);
+        }
+    }
+    >span {
+        @include margin(auto);
+        @include color(greyscale);
+        @include letter-spacing(2px);
+        font: font(title, medium);
+    }
+}
+
+#window {
+    @include flex(vertical);
+    @include dimensions(400px,
+    400px);
+    border-style: solid;
+    border-color: black;
+    border-width: 30px;
+    border-image-source: url('../../assets/img/borders/border.png');
+    border-image-slice: 58 58 58 58;
+    border-image-width: 60px;
+    border-image-repeat: round;
+    @include background(image,
+    'background_form.jpg',
+    2,
+    center center no-repeat);
+    @include background-size(411px 415px);
+    >#params {
+        @include flex(vertical);
+        @include margin(0 auto 60px);
+        @include dimensions(auto,
+        300px);
+        >div {
+            @include flex(vertical);
+            @include margin(0 auto auto);
+        }
+        mat-form-field {
+            @include margin(0 auto);
+            @include color(greyscale,
+            50);
+            @include dimensions(300px,
+            auto);
+            &.mat-focused {
+                ::ng-deep .mat-select-arrow,
+                .placeholder {
+                    @include color(primary);
+                }
+            }
+            &:not(.mat-focused) {
+                ::ng-deep .mat-placeholder-required,
+                .placeholder {
+                    @include color(greyscale, 50);
+                }
+            }
+            ::ng-deep .mat-form-field-underline {
+                @include background(color, color(greyscale, 50));
+            }
+            ::ng-deep .mat-select-arrow,
+            ::ng-deep .mat-select-value {
+                @include color(greyscale, 50);
+            }
+        }
+        .checkbox {
+            @include flex(horizontal);
+            @include dimensions(300px, auto);
+            @include margin(10px auto);
+            >mat-checkbox {
+                @include margin(auto);
+                ::ng-deep .mat-checkbox-label {
+                    @include color(greyscale, 50);
+                }
+                ::ng-deep .mat-checkbox-frame {
+                    @include background(color, color(greyscale, 50));
+                }
+            }
+            &::ng-deep.mat-checkbox-checked .mat-checkbox-background {
+                @include background(color, color(primary));
+            }
+        }
+        >h2 {
+            @include margin(auto);
+            @include color(greyscale, 50);
+            font: font(title, small);
+            @include letter-spacing(2px);
+        }
+    }
+    >h1 {
+        @include margin(20px auto);
+        @include color(greyscale, 50);
+        font: font(title, medium);
+        @include letter-spacing(2px);
+    }
+    >.divider {
+        @include margin(0 auto);
+        @include dimensions(250px, auto);
+        border-top: 1px solid color(greyscale);
+    }
+}

@@ -1,0 +1,13 @@
+<div class="tackle">
+  <app-chat-entity [entity]="message.author"></app-chat-entity>
+  <ng-container *ngIf=" message.apLoss">
+    <span class="ap-loss">{{ message.apLoss }}</span>
+    <img class="ap-loss" src="../../../../assets/img/stats/ap.png">
+  </ng-container>
+  <ng-container *ngIf="message.mpLoss">
+    <span class="mp-loss">{{ message.mpLoss }}</span>
+    <img class="mp-loss" src="../../../../assets/img/stats/mp.png">
+  </ng-container>
+  <img src="../../../../assets/img/chat/tackle.png">
+  <app-chat-entity [entity]="tackler" *ngFor="let tackler of message.tacklers"></app-chat-entity>
+</div>

@@ -1,0 +1,17 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+.message-content {
+    @include margin(1px auto 1px 0);
+    @include font(text, huge, bold);
+    @include flex(horizontal, wrap);
+    >* {
+        @include flex(horizontal);
+        @include margin(auto);
+        ::ng-deep app-chat-entity {
+            @include flex(horizontal);
+            @include margin(auto);
+        }
+    }
+}

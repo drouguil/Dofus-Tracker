@@ -1,0 +1,42 @@
+@import './palettes.scss';
+@function color($palette: primary, $intensity: 500, $opacity: ff) {
+    @if($palette==primary) {
+        $palette: $palette-primary;
+    }
+    @else if($palette==accent) {
+        $palette: $palette-accent;
+    }
+    @else if($palette==greyscale) {
+        $palette: $palette-greyscale;
+    }
+    @else if($palette==warn) {
+        $palette: $palette-warn;
+    }
+    @else if($palette==error) {
+        $palette: $palette-error;
+    }
+    @else if($palette==success) {
+        $palette: $palette-success;
+    }
+    @else if($palette==info) {
+        $palette: $palette-info;
+    }
+    @else if($palette==team-red) {
+        $palette: $palette-team-red;
+    }
+    @else if($palette==team-blue) {
+        $palette: $palette-team-blue;
+    }
+    @else if($palette==discord) {
+        $palette: $palette-discord;
+    }
+    @else {
+        @error 'The first param must be equal to primary, accent, greyscale, warn, error, success, info, team-red, team-blue or discord';
+    }
+    $color: unquote(map-get($palette, $intensity) + '' + $opacity);
+    @return $color;
+}
+
+@mixin color($palette: primary, $intensity: 500, $opacity: ff) {
+    color: color($palette, $intensity, $opacity);
+}

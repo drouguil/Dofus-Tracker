@@ -1,0 +1,9 @@
+<div id="timeline">
+  <div id="turn">
+    <div class="circle"><span>{{ getTurn() }}</span></div>
+    <div class="ribbon">Tour de jeu</div>
+  </div>
+  <div id="entities">
+    <app-timeline-entity *ngFor="let entity of getTimeline()" [entity]="entity"></app-timeline-entity>
+  </div>
+</div>

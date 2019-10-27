@@ -1,0 +1,78 @@
+@import '../../../../assets/scss/colorsManager.scss';
+@import '../../../../assets/scss/fontsManager.scss';
+@import '../../../../assets/scss/mediasManager.scss';
+@import '../../../../assets/scss/utils.scss';
+div.cell-available {
+    @include flex(vertical);
+    @include dimensions(100%);
+    @include relative();
+    @include margin(auto);
+    @include dimensions(70.71px, 70.71px);
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
+    z-index: 3;
+    top: -10px;
+    cursor: pointer;
+    background-color: #828264;
+    &:hover {
+        background-color: #ecf0f1;
+    }
+    &.shadow {
+        filter: brightness(50%);
+    }
+    &.blue {
+        background-color: #1e3796 !important;
+    }
+    &.red {
+        background-color: #c8371e !important;
+    }
+    &.moved {
+        background-color: green !important;
+    }
+    &.spell {
+        background-color: royalblue !important;
+    }
+    .team {
+        @include dimensions(75%, 75%);
+        -moz-border-radius: 75%/75%;
+        -webkit-border-radius: 75% 75%;
+        border-radius: 75%/75%;
+        border: solid 3px black;
+        margin: auto;
+        &.blue {
+            border-color: #1e3796;
+        }
+        &.red {
+            border-color: #c8371e;
+        }
+    }
+}
+
+.content {
+    @include dimensions(100%);
+    @include flex(vertical);
+    position: relative;
+    top: -132.71px;
+    pointer-events: none;
+    img {
+        z-index: 3;
+        pointer-events: none;
+        margin: auto;
+        @include dimensions(auto, 100px);
+        &.monster {
+            margin: 25px auto auto auto;
+            @include dimensions(80px, 100px);
+        }
+        &.hover {
+            filter: brightness(130%);
+        }
+    }
+}
+
+span {
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    left: 42px;
+    color: white;
+    font-size: 30px;
+}

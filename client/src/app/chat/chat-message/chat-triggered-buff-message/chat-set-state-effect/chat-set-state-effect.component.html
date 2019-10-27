@@ -1,0 +1,5 @@
+<div class="set-state">
+    <img *ngIf="!effect.isSet" src="../../../../../assets/img/chat/cross.png">
+    <app-state-img [state]="effect.state"></app-state-img>
+    <span *ngIf="stateName" [ngClass]="stateLength">{{stateName}}</span>
+</div>

@@ -1,0 +1,86 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+#timeline {
+    @include flex(horizontal);
+    @include margin(40px auto 0 auto);
+    @include relative();
+    @include z-index(third);
+    @include dimensions(auto, 139px);
+    >#turn {
+        @include margin(auto);
+        @include relative();
+        @include dimensions(54px, 79px);
+        border-radius: 10px;
+        display: inline-block;
+        top: 0;
+        @include transition(0.2s, ease);
+        background: linear-gradient(to bottom right, #4CAF50 0%, #1B5E20 100%);
+        color: #00944a;
+        &:before,
+        &:after {
+            @include dimensions(inherit, inherit);
+            @include absolute(0,0,0,0,content);
+            @include margin(auto);
+            border-radius: inherit;
+            background: inherit;
+        }
+        &:before {
+            @include transform(rotate(60deg));
+        }
+        &:after {
+            @include transform(rotate(-60deg));
+        }
+        .circle {
+            @include flex(vertical);
+            @include dimensions(46px);
+            @include absolute(0,0,0,0);
+            @include margin(auto);
+            @include background(color, color(greyscale, 50));
+            @include z-index(second);
+            border-radius: 50%;
+            span {
+                font: font(title, small);
+                @include margin(auto);
+            }
+        }
+        .font {
+            display: inline-block;
+            margin-top: 1em;
+        }
+        .ribbon {
+            @include dimensions(80px, 15px);
+            @include padding(5px 5px 4px);
+            font: font(title, tiny);
+            @include absolute(inherit,inherit,4px,calc(50% - 45px));
+            @include color(greyscale, 50);
+            @include uppercase();
+            @include z-index(first);
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
+            text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            background: linear-gradient(to bottom right, #555 0%, #333 100%);
+            text-align: center;
+        }
+    }
+    >#entities {
+        @include flex(horizontal);
+        overflow: overlay;
+        width: calc(1400px * 0.75 - 104px);
+        padding-bottom: 10px;
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #666;
+        }
+        &::-webkit-scrollbar-track {
+            background: #ddd;
+        }
+        >app-timeline-entity {
+            @include flex(horizontal);
+        }
+    }
+}

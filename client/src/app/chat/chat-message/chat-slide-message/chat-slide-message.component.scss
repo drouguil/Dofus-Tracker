@@ -1,0 +1,13 @@
+@import '../../../../assets/scss/colorsManager.scss';
+@import '../../../../assets/scss/fontsManager.scss';
+@import '../../../../assets/scss/mediasManager.scss';
+@import '../../../../assets/scss/utils.scss';
+.slide {
+    @include flex(horizontal);
+    @include margin(auto);
+    @include link();
+    img {
+        @include dimensions(auto, 24px);
+        @include margin(auto 2px auto auto);
+    }
+}

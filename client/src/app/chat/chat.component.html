@@ -1,0 +1,8 @@
+<div id="chat-container">
+  <div id="messages-container">
+    <app-chat-message [message]="message" *ngFor="let message of getCurrentChatPage()"></app-chat-message>
+  </div>
+</div>
+<div id="pages-container">
+  <app-chat-pagination [page]="i" (pageChanged)="changeChatPage($event)" *ngFor="let page of pages; let i = index" [attr.data-index]="i"></app-chat-pagination>
+</div>

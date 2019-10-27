@@ -1,0 +1,17 @@
+export enum DialogTypeEnum {
+    BOOK = 0,
+    DIALOG = 1,
+    LOCKABLE = 2,
+    PURCHASABLE = 3,
+    GUILD_INVITATION = 4,
+    GUILD_CREATE = 5,
+    GUILD_RENAME = 6,
+    MARRIAGE = 7,
+    DUNGEON_MEETING = 8,
+    SPELL_FORGET = 9,
+    TELEPORTER = 10,
+    EXCHANGE = 11,
+    ALLIANCE_INVITATION = 12,
+    ALLIANCE_CREATE = 13,
+    ALLIANCE_RENAME = 14
+}

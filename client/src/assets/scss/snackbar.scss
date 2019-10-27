@@ -1,0 +1,16 @@
+@import './colorsManager.scss';
+@import './utils.scss';
+snack-bar-container {
+    &.warn {
+        @include background(color, color(warn));
+    }
+    &.error {
+        @include background(color, color(error));
+    }
+    &.success {
+        @include background(color, color(success));
+    }
+    &.info {
+        @include background(color, color(info));
+    }
+}

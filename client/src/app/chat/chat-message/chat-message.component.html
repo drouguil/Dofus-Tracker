@@ -1,0 +1,16 @@
+<div class="message-content">
+  <app-chat-move-message *ngIf="isMoveMessage()" [message]="message"></app-chat-move-message>
+  <app-chat-teleport-message *ngIf="isTeleportMessage()" [message]="message"></app-chat-teleport-message>
+  <app-chat-slide-message *ngIf="isSlideMessage()" [message]="message"></app-chat-slide-message>
+  <app-chat-cast-spell-message *ngIf="isCastSpellMessage()" [message]="message"></app-chat-cast-spell-message>
+  <app-chat-weapon-message *ngIf="isWeaponMessage()" [message]="message"></app-chat-weapon-message>
+  <app-chat-heal-message *ngIf="isHealMessage()" [message]="message"></app-chat-heal-message>
+  <app-chat-hit-message *ngIf="isHitMessage()" [message]="message"></app-chat-hit-message>
+  <app-chat-buff-message *ngIf="isBuffMessage()" [message]="message"></app-chat-buff-message>
+  <app-chat-boost-buff-message *ngIf="isBoostBuffMessage()" [message]="message"></app-chat-boost-buff-message>
+  <app-chat-spell-boost-buff-message *ngIf="isSpellBoostBuffMessage()" [message]="message"></app-chat-spell-boost-buff-message>
+  <app-chat-state-boost-buff-message *ngIf="isStateBoostBuffMessage()" [message]="message"></app-chat-state-boost-buff-message>
+  <app-chat-triggered-buff-message *ngIf="isTriggeredBuffMessage()" [message]="message"></app-chat-triggered-buff-message>
+  <app-chat-tackle-message *ngIf="isTackleMessage()" [message]="message"></app-chat-tackle-message>
+  <app-chat-dodge-message *ngIf="isDodgeMessage()" [message]="message"></app-chat-dodge-message>
+</div>

@@ -1,0 +1,48 @@
+@import '../../../../assets/scss/colorsManager.scss';
+@import '../../../../assets/scss/fontsManager.scss';
+@import '../../../../assets/scss/mediasManager.scss';
+@import '../../../../assets/scss/utils.scss';
+.entity-container {
+    @include flex(vertical);
+    @include margin(auto 5px auto);
+    @include padding(0 0 20px);
+    @include relative();
+    &.is-turn::after {
+        @include dimensions(0, 0);
+        @include absolute(inherit, inherit, 2px, 18px, content);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 16px solid color(primary);
+    }
+    &.is-death {
+        filter: brightness(50%);
+    }
+    &.summon {
+        @include padding(15px 0 20px);
+        .entity {
+            @include dimensions(50px, 60px);
+            img {
+                @include margin(auto auto auto -5px);
+                @include dimensions(auto, 55px);
+            }
+        }
+    }
+    .entity {
+        @include flex(horizontal);
+        @include dimensions(50px, 75px);
+        @include margin(auto);
+        @include link();
+        border: 2px solid color(greyscale, 50);
+        border-radius: 10px;
+        &.red {
+            @include background(color, color(team-red));
+        }
+        &.blue {
+            @include background(color, color(team-blue));
+        }
+        img {
+            @include margin(auto auto auto -10px);
+            @include dimensions(auto, 70px);
+        }
+    }
+}

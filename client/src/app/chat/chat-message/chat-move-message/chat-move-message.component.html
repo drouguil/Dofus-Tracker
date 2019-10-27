@@ -1,0 +1,5 @@
+<div class="move" (mouseenter)="displayMovedCells()" (mouseleave)="clearMovedCells()">
+  <app-chat-entity [entity]="message.author"></app-chat-entity>
+  <img src="../../../../assets/img/chat/move.png">
+  <span>{{ message.cellsId.length - 1 }}</span>
+</div>

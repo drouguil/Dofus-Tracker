@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+@import './palettes.scss';
+
+// Be sure that you only ever include 'mat-core' mixin once!
+// it should not be included for each theme.
+@include mat-core();
+
+// mandatory stuff for theming
+$mat-palette-primary: mat-palette($palette-primary);
+$mat-palette-accent: mat-palette($palette-accent);
+$mat-palette-warn: mat-palette($palette-warn);
+
+// include the custom theme components into a theme object
+$mat-theme: mat-light-theme($mat-palette-primary, $mat-palette-accent, $mat-palette-warn);
+
+// include the custom theme object into the angular material theme
+@include angular-material-theme($mat-theme);

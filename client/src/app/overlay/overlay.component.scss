@@ -1,0 +1,19 @@
+@import '../../assets/scss/colorsManager.scss';
+@import '../../assets/scss/fontsManager.scss';
+@import '../../assets/scss/mediasManager.scss';
+@import '../../assets/scss/utils.scss';
+#overlay-container {
+    @include flex(vertical);
+    @include dimensions(300px, 100%);
+    @include z-index(third);
+    @include margin(10px auto);
+    @include background(color, color(greyscale, 300));
+    app-overlay-team {
+        @include dimensions(100%, 50%);
+        @include flex(vertical);
+        @include margin(auto);
+        &:not(:first-child) {
+            border-top: 3px solid black;
+        }
+    }
+}

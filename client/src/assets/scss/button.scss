@@ -1,0 +1,25 @@
+@import './colorsManager.scss';
+@import './utils.scss';
+button {
+    &.primary {
+        @include background(color, color(primary));
+    }
+    &.warn {
+        @include background(color, color(warn));
+    }
+    &.error {
+        @include background(color, color(error));
+    }
+    &.success {
+        @include background(color, color(success));
+    }
+    &.info {
+        @include background(color, color(info));
+    }
+    &.default {
+        @include background(color, color(greyscale));
+    }
+    >span {
+        @include color(greyscale, 900);
+    }
+}

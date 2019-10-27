@@ -1,0 +1,15 @@
+<div class="slide" (mouseenter)="displaySpellCell(message.endCellId)" (mouseleave)="clearSpellCells()">
+
+  <app-chat-entity [entity]="message.author"></app-chat-entity>
+
+  <!-- Himself -->
+
+  <img *ngIf="message.author === message.target" src="../../../../assets/img/chat/slide_himself.png">
+
+  <!-- Target -->
+
+  <img *ngIf="message.author !== message.target" src="../../../../assets/img/chat/slide.png">
+
+  <app-chat-entity *ngIf="message.target && message.author !== message.target" [entity]="message.target"></app-chat-entity>
+
+</div>

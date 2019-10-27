@@ -1,0 +1,11 @@
+<div *ngIf="!isConnected()" id="login-container">
+  <div class="background"></div>
+  <app-login></app-login>
+</div>
+<div *ngIf="isConnected()" id="content-container">
+  <div class="background"></div>
+  <app-menu></app-menu>
+  <app-overlay></app-overlay>
+  <app-map></app-map>
+  <app-chat></app-chat>
+</div>

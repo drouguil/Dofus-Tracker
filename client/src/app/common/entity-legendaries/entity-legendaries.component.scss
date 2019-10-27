@@ -1,0 +1,12 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+.legendaries {
+    @include flex(vertical);
+    @include margin(auto);
+    >img {
+        @include dimensions(22px, 22px);
+        @include margin(1px auto);
+    }
+}

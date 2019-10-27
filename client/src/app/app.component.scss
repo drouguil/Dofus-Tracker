@@ -1,0 +1,55 @@
+@import '../assets/scss/colorsManager.scss';
+@import '../assets/scss/fontsManager.scss';
+@import '../assets/scss/mediasManager.scss';
+@import '../assets/scss/utils.scss';
+.background {
+    @include background-size(cover);
+    @include dimensions(100%, 100%);
+    @include absolute();
+    @include z-index(background);
+}
+
+#login-container {
+    @include dimensions(100%, 100%);
+    @include flex(vertical);
+    >.background {
+        @include background(image, 'background_login.jpg', 1, center center no-repeat);
+    }
+    app-login {
+        @include flex(vertical);
+        @include margin(auto);
+        @include relative();
+        @include z-index(third);
+    }
+}
+
+#content-container {
+    @include dimensions(100%, 100%);
+    @include flex(horizontal);
+    >.background {
+        @include background(image, 'background_content.jpg', 1, center center no-repeat);
+    }
+    app-map,
+    app-chat,
+    app-overlay,
+    app-menu {
+        @include flex(vertical);
+    }
+    app-map,
+    app-chat {
+        @include margin(auto);
+        @include dimensions(auto,
+        100%);
+    }
+    app-overlay {
+        @include margin(auto auto auto 10px);
+        @include dimensions(auto,
+        100%);
+    }
+    app-menu {
+        @include dimensions(500px,
+        40px);
+        @include fixed(0,
+        calc(50% - 150px));
+    }
+}

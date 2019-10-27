@@ -1,0 +1,20 @@
+<div class="buff">
+  <app-chat-entity *ngIf="message.buff.target" [entity]="message.buff.target"></app-chat-entity>
+  <span *ngIf="duration >= 0">{{ duration }}</span>
+  <img class="infinity" *ngIf="duration < 0" src="../../../../assets/img/chat/infinity.png">
+  <img src="../../../../assets/img/chat/duration.png">
+  <img src="../../../../assets/img/chat/dispellable/{{message.buff.dispellable}}.png">
+  (
+  <span>{{ message.buff.arg1 }}</span>
+  -
+  <span>{{ message.buff.arg2 }}</span>
+  -
+  <span>{{ message.buff.arg3 }}</span>
+  )
+  <span *ngIf="delay >= 0">{{ delay }}</span>
+  <img class="infinity" *ngIf="delay < 0" src="../../../../assets/img/chat/infinity.png">
+  <img src="../../../../assets/img/chat/delay.png">
+  <app-chat-send-spell-effect *ngIf="isSendSpellEffect()" [effect]="message.buff.effect"></app-chat-send-spell-effect>
+  <app-chat-hit-effect *ngIf="isHitEffect()" [effect]="message.buff.effect"></app-chat-hit-effect>
+  <app-chat-set-state-effect *ngIf="isSetStateEffect()" [effect]="message.buff.effect"></app-chat-set-state-effect>
+</div>

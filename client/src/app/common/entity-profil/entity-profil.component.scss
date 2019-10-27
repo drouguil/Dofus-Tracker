@@ -1,0 +1,78 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+.primary {
+    @include flex(vertical);
+    @include margin(auto);
+    >.profil {
+        @include margin(0 auto auto auto);
+        @include flex(vertical);
+        @include link();
+        >span {
+            @include font(text, huge, bold);
+            @include margin(auto);
+            &.blue {
+                @include color(team-blue);
+            }
+            &.red {
+                @include color(team-red);
+            }
+        }
+        >div {
+            @include margin(auto);
+            @include relative();
+            >img {
+                @include dimensions(60px, 60px);
+                &.is-death {
+                    filter: brightness(50%);
+                }
+            }
+        }
+    }
+    >.primary-stats {
+        @include flex(horizontal);
+        @include margin(auto);
+        >div {
+            @include flex(vertical);
+            &:not(:first-child) {
+                margin-left: 5px;
+            }
+            .primary-stat {
+                @include flex(horizontal);
+                @include dimensions(100%, auto);
+                @include margin(auto);
+                &.shield {
+                    >span {
+                        color: #7564cb;
+                        @include margin(auto 0 auto auto);
+                    }
+                }
+                >span {
+                    @include font(text, medium, bold);
+                    @include margin(auto);
+                    @include color(greyscale, 50);
+                    &.negative {
+                        @include color(error, 900);
+                    }
+                }
+                >img {
+                    @include dimensions(16px, 16px);
+                    @include margin(auto 2px auto 0);
+                }
+                >div {
+                    @include flex(vertical);
+                    @include margin(auto);
+                    >span {
+                        @include font(text, medium, bold);
+                        @include margin(auto);
+                        @include color(greyscale, 50);
+                        &.negative {
+                            @include color(error, 900);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

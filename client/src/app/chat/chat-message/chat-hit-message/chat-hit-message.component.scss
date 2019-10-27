@@ -1,0 +1,37 @@
+@import '../../../../assets/scss/colorsManager.scss';
+@import '../../../../assets/scss/fontsManager.scss';
+@import '../../../../assets/scss/mediasManager.scss';
+@import '../../../../assets/scss/utils.scss';
+.hit {
+    @include flex(horizontal);
+    @include margin(auto);
+    img {
+        @include dimensions(auto, 24px);
+        @include margin(auto 2px);
+    }
+    span {
+        @include margin(auto 2px);
+        &.shield {
+            color: #7564cb;
+        }
+        &.neutral {
+            color: #333333;
+        }
+        &.earth {
+            color: #663300;
+        }
+        &.fire {
+            color: #cc3333;
+        }
+        &.water {
+            color: #336699;
+        }
+        &.air {
+            color: #669933;
+        }
+        &.pushback,
+        &.multiple {
+            color: grey;
+        }
+    }
+}

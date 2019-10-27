@@ -1,0 +1,33 @@
+<div class="primary">
+  <div (click)="openDetails(entity)" class="profil">
+    <span [ngClass]="{'red': entity.team === 0, 'blue': entity.team === 1}">{{ entity.name }}</span>
+    <div>
+      <img [ngClass]="{'is-death': !entity.isAlive}" [src]="getEntityImage()">
+    </div>
+  </div>
+  <div class="primary-stats">
+    <div>
+      <div class="primary-stat shield">
+        <img src="../../assets/img/stats/shield.png">
+        <span>{{ entity.getStats().shield }}</span>
+      </div>
+      <div class="primary-stat">
+        <img src="../../assets/img/stats/life.png">
+        <div>
+          <span>{{ entity.getStats().life }}</span>
+          <span>/ {{ entity.getStats().maxLife }}</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="primary-stat">
+        <img src="../../assets/img/stats/ap.png">
+        <span>{{ entity.getStats().apCurrent }}</span>
+      </div>
+      <div class="primary-stat">
+        <img src="../../assets/img/stats/mp.png">
+        <span>{{ entity.getStats().mpCurrent }}</span>
+      </div>
+    </div>
+  </div>
+</div>

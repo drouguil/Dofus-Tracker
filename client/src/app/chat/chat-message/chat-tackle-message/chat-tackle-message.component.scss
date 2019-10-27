@@ -1,0 +1,26 @@
+@import '../../../../assets/scss/colorsManager.scss';
+@import '../../../../assets/scss/fontsManager.scss';
+@import '../../../../assets/scss/mediasManager.scss';
+@import '../../../../assets/scss/utils.scss';
+.tackle {
+    @include flex(horizontal);
+    @include margin(auto);
+    img {
+        @include dimensions(auto, 24px);
+        @include margin(auto auto auto 4px);
+        &.ap-loss,
+        &.mp-loss {
+            @include dimensions(auto, 16px);
+            @include margin(auto 2px);
+        }
+    }
+    span {
+        @include margin(auto 2px);
+        &.ap-loss {
+            @include color(info, 900);
+        }
+        &.mp-loss {
+            @include color(success, 900);
+        }
+    }
+}

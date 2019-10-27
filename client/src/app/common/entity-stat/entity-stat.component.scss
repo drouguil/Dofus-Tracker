@@ -1,0 +1,20 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+.stat {
+    @include flex(horizontal);
+    @include margin(auto 0 auto auto);
+    >span {
+        @include font(text, medium, bold);
+        @include margin(auto 0 auto auto);
+        @include color(greyscale, 50);
+        &.negative {
+            @include color(error, 900);
+        }
+    }
+    >img {
+        @include dimensions(16px, 16px);
+        @include margin(2px 0 2px 4px);
+    }
+}

@@ -1,0 +1,9 @@
+<div class="buff">
+  <app-chat-entity *ngIf="message.buff.target" [entity]="message.buff.target"></app-chat-entity>
+  <app-state-img [state]="message.buff.state"></app-state-img>
+  <span *ngIf="stateName" [ngClass]="stateLength">{{stateName}}</span>
+  <span *ngIf="duration >= 0">{{ duration }}</span>
+  <img class="infinity" *ngIf="duration < 0" src="../../../../assets/img/chat/infinity.png">
+  <img src="../../../../assets/img/chat/duration.png">
+  <img src="../../../../assets/img/chat/dispellable/{{message.buff.dispellable}}.png">
+</div>

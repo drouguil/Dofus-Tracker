@@ -1,0 +1,1 @@
+UPDATE Spell AS S SET variant = (SELECT COALESCE((SELECT variant from SpellCouple AS C WHERE C.spell = S.id),(SELECT spell from SpellCouple AS C WHERE C.variant = S.id)));

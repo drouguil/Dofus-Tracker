@@ -1,0 +1,5 @@
+<div class="send-spell">
+    <img *ngIf="effect.isAllTarget" src="../../../../../assets/img/chat/all_target.png">
+    <app-spell-img [width]="'small'" [spell]="effect.spell"></app-spell-img>
+    <span class="spell-name" [ngClass]="spellLength">{{ effect.spell.name }}</span>
+</div>

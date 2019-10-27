@@ -1,0 +1,33 @@
+@import '../../../../assets/scss/colorsManager.scss';
+@import '../../../../assets/scss/fontsManager.scss';
+@import '../../../../assets/scss/mediasManager.scss';
+@import '../../../../assets/scss/utils.scss';
+.cell-obstacle {
+    @include flex(vertical);
+    @include dimensions(100%);
+    pointer-events: none;
+    >div {
+        @include dimensions(60px, 15px);
+        @include z-index(first);
+        transform-origin: 0 0;
+        position: absolute;
+        background: #55553a;
+        top: 15px;
+        left: 0px;
+        &.front {
+            @include dimensions(calc(70.71px - 4px));
+            transform: rotateX(120deg) rotateY(0deg) rotateZ(-45deg);
+            border: 2px solid color(greyscale, 50);
+        }
+        &.top {
+            transform: rotateX(45deg) rotateY(35deg) rotateZ(0deg);
+            border-right: 1px solid color(greyscale, 50);
+        }
+        &.side {
+            transform: rotateX(45deg) rotateY(-35deg) rotateZ(0deg);
+            left: 50px;
+            top: 40px;
+            border-left: 1px solid color(greyscale, 50);
+        }
+    }
+}

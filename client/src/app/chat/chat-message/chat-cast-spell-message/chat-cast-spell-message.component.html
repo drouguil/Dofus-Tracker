@@ -1,0 +1,41 @@
+<div class="cast-spell" (mouseenter)="displaySpellCell()" (mouseleave)="clearSpellCells()">
+
+  <app-chat-entity [entity]="message.author"></app-chat-entity>
+
+  <app-spell-img [width]="'small'" [spell]="message.spell"></app-spell-img>
+
+  <img class="crit" *ngIf="message.critical == 2" src="../../../../assets/img/chat/crit.png">
+
+  <span class="spell-name" [ngClass]="spellLength">{{ message.spell.name }}</span>
+
+  <ng-container *ngIf="message.apCost">
+    <span class="ap-cost">{{ message.apCost }}</span>
+    <img class="ap-cost" src="../../../../assets/img/stats/ap.png">
+  </ng-container>
+
+  <!-- No-target -->
+
+  <div class="no-target" *ngIf="!message.target">
+    <img src="../../../../assets/img/chat/target.png">
+    <img class="cross" src="../../../../assets/img/chat/cross.png">
+  </div>
+
+  <ng-container *ngIf="message.target">
+
+    <!-- Himself -->
+
+    <img *ngIf="message.author === message.target" src="../../../../assets/img/chat/himself.png">
+
+    <!-- Target -->
+
+    <ng-container *ngIf="message.author !== message.target">
+
+      <img src="../../../../assets/img/chat/target.png">
+
+      <app-chat-entity [entity]="message.target"></app-chat-entity>
+
+    </ng-container>
+
+  </ng-container>
+
+</div>

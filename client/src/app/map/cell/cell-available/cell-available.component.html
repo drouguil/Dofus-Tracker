@@ -1,0 +1,14 @@
+<div (click)="onClick()" (contextmenu)="onRightClick()" (mouseenter)="onHover()" (mouseleave)="onLeave()" class="cell-available"
+  [ngClass]="{'shadow': isShadow(), 'moved': isMoved(), 'spell': isSpell(), 'blue': isPlacement(1), 'red': isPlacement(2)}">
+
+  <div *ngIf="isEntity()" class="team" [ngClass]="getEntityTeam()"></div>
+
+</div>
+
+<span *ngIf="isMoved()">
+  {{ getMovedCellNumber() }}
+</span>
+
+<div *ngIf="isEntity()" class="content">
+  <img [ngClass]="{'monster': isMonster(), 'hover': isEntityHover()}" [src]="getEntityImage()">
+</div>

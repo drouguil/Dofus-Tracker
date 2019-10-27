@@ -1,0 +1,41 @@
+@import '../../assets/scss/colorsManager.scss';
+@import '../../assets/scss/fontsManager.scss';
+@import '../../assets/scss/mediasManager.scss';
+@import '../../assets/scss/utils.scss';
+#map-container {
+    @include flex(vertical);
+    #map {
+        @include dimensions(calc(1450px * 0.75), calc(1025px * 0.75));
+        @include relative();
+        @include margin(auto);
+        top: -96px;
+        left: -136px;
+        transform: scale(0.75);
+        z-index: 2;
+        @for $i from 1 through 40 {
+            #line-#{$i} {
+                top: ($i - 1)*25px;
+            }
+        }
+        .line {
+            @include dimensions(1400px, 50px);
+            display: flex;
+            position: absolute;
+            &:nth-child(2n) {
+                left: 50px;
+                ::ng-deep app-cell-available {
+                    .cell-available {
+                        background-color: #aaaa82;
+                        &:hover {
+                            background-color: #ecf0f1;
+                        }
+                    }
+                }
+            }
+            app-cell {
+                @include dimensions(100px, 50px);
+                @include relative();
+            }
+        }
+    }
+}

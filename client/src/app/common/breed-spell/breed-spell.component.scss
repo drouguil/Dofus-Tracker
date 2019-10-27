@@ -1,0 +1,22 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+
+.breed-spell {
+    @include flex(horizontal);
+    @include margin(auto);
+    @include background(color, color(greyscale, 900));
+    border: 2px solid color(greyscale, 900);
+    filter: brightness(60%);
+    &.unknow {
+        filter: brightness(100%);
+        @include background(color, color(greyscale, 50));
+        border-color: color(greyscale, 50);
+    }
+    &.chosen {
+        filter: brightness(100%);
+        @include background(color, color(success));
+        border-color: color(success);
+    }
+}

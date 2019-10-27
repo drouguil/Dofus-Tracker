@@ -1,0 +1,6 @@
+<div [ngClass]="{'is-turn': entity.isTurn, 'is-death': !entity.isAlive, 'summon': entity.summoned}" class="entity-container" (mouseenter)="onHover()"
+  (mouseleave)="onLeave()">
+  <div class="entity" (click)="openDetails(entity)" [ngClass]="getEntityTeam()">
+    <img [src]="getEntityImage(entity)">
+  </div>
+</div>

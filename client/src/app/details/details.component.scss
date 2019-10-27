@@ -1,0 +1,20 @@
+@import '../../assets/scss/colorsManager.scss';
+@import '../../assets/scss/fontsManager.scss';
+@import '../../assets/scss/mediasManager.scss';
+@import '../../assets/scss/utils.scss';
+.mat-dialog-content {
+    @include flex(vertical);
+    app-details-entity {
+        @include flex(horizontal);
+        @include margin(auto);
+    }
+    app-details-spells {
+        @include flex(vertical);
+        @include margin(10px auto auto auto);
+    }
+    app-details-buffs {
+        @include flex(horizontal);
+        @include dimensions(100%, auto);
+        @include margin(10px auto auto auto);
+    }
+}

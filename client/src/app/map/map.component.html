@@ -1,0 +1,10 @@
+<div id="map-container">
+
+  <app-timeline></app-timeline>
+
+  <div id="map">
+    <div [id]="'line-' + (line+1)" class="line" *ngFor="let line of lines">
+      <app-cell [id]="'cell-' + getCellNumber(line, column)" [cell]="getCell(line, column)" *ngFor="let column of columns"></app-cell>
+    </div>
+  </div>
+</div>

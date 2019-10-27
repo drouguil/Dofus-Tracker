@@ -1,0 +1,14 @@
+<div class="hit">
+
+  <app-chat-entity [entity]="message.target"></app-chat-entity>
+
+  <img [src]="hitImage">
+  <span [ngClass]="hitType" *ngIf="message.loss > 0">- {{ message.loss }}</span>
+  <span class="shield" *ngIf="message.shieldLoss > 0">- {{ message.shieldLoss }}</span>
+  (
+  <span [ngClass]="hitType">{{ message.permanentDamages }}</span>
+  <img src="../../assets/img/chat/max.png">
+  )
+
+  <img *ngIf="message.isDeath" src="../../assets/img/chat/death.png">
+</div>

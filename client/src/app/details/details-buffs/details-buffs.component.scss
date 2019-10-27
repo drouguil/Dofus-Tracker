@@ -1,0 +1,17 @@
+@import '../../../assets/scss/colorsManager.scss';
+@import '../../../assets/scss/fontsManager.scss';
+@import '../../../assets/scss/mediasManager.scss';
+@import '../../../assets/scss/utils.scss';
+.buffs {
+    @include flex(vertical);
+    @include margin(auto);
+    h1 {
+        text-align: center;
+        @include font(title, small);
+        @include margin(auto 10px);
+    }
+    >div {
+        @include flex(horizontal);
+        @include margin(auto); 
+    }
+}
